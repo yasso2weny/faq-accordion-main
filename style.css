@@ -1,0 +1,170 @@
+/*  (-CSS reset- Credit: Josh Comeau ) */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/*  CSS Reset End */
+
+:root {
+    --card-bg-clr: hsl(0, 0%, 100%);
+    --bg-clr: hsl(275, 100%, 97%);
+    --secondary-clr: hsl(292, 16%, 49%);
+    --primary-clr: hsl(292, 42%, 14%);
+
+    --ff-base: 'Work Sans', sans-serif;
+
+    --fw-regular: 400;
+    --fw-semi-bold: 600;
+    --fw-bold: 700;
+
+    --gap: 0.9375rem;
+}
+
+body {
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+
+    background-color: var(--bg-clr);
+    background-image: url(assets/images/background-pattern-desktop.svg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    font-family: var(--ff-base);
+    font-weight: var(--fw-regular);
+    font-size: 1rem;
+}
+
+/* Main */
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+    background-color: var(--card-bg-clr);
+    border-radius: 20px;
+    padding: 25px;
+    width: 595px;
+}
+
+/* Header */
+
+header {
+    display: flex;
+    gap: var(--gap);
+}
+
+#title {
+    font-size: 3.125rem;
+    color: var(--primary-clr);
+}
+
+/* Questions Header */
+
+.question-header {
+    display: flex;
+    align-items: center;
+}
+
+.question-title {
+    font-size: 1rem;
+    color: var(--primary-clr);
+}
+
+.plus-icon-wrapper {
+    margin-left: auto;
+}
+
+/* Questions Answer */
+
+.question-answer {
+    color: var(--secondary-clr);
+}
+
+hr {
+    border: none;
+    height: 0.5px;
+    background-color: var(--secondary-clr);
+    opacity: 0.2;
+}
+
+@media (max-width: 600px) {
+    body {
+        background-image: url(assets/images/background-pattern-mobile.svg);
+    }
+
+    main {
+        width: 325px;
+    }
+
+    #star-icon {
+        width: 25px;
+    }
+
+    #title {
+        font-size: 30px;
+    }
+
+    .question-header {
+        gap: 8px;
+    }
+
+    .question-title {
+        font-size: 14px;
+        color: var(--primary-clr);
+    }
+
+    .question-answer {
+        font-size: 14px;
+    }
+
+    .plus-icon-wrapper {
+        flex-shrink: 0;
+    }
+
+    .minus-icon-wrapper {
+        flex-shrink: 0;
+    }
+}
